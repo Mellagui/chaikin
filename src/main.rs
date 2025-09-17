@@ -27,7 +27,7 @@ async fn main() {
         if is_key_pressed(KeyCode::Enter)  {
             if points.is_empty() {
                 message = true;
-            } else {
+            } else if points.len() > 1{
                 started = true;
             }
         }
@@ -37,7 +37,7 @@ async fn main() {
             message = false;    
         }
         for point in points.iter() {
-            draw_circle_lines(point.0, point.1, 3.0, 1. , RED);
+            draw_circle_lines(point.0, point.1, 2.5, 1. , RED);
         }
 
         if message {
